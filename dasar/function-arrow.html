@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Arrow</title>
+</head>
+<body>
+<script>
+    const sayHi = (name) => {
+        console.info(`Hi ${name}`)
+    }
+    // or
+    const sayHello = name => console.info(`Hello ${name}`)
+
+    const sum = (first, second) => first + second
+    // or
+    const sumBlock = (first, second) => {
+        return first + second
+    }
+
+    function giveMeName(callback) {
+        callback("Fahmi")
+    }
+
+    sayHi("Fahmi")
+    sayHello("Fahmi")
+    console.info(sum(10, 10))
+    console.info(sumBlock(10, 10))
+    giveMeName((name) => console.info(name))
+    giveMeName(name => console.info(name))
+</script>
+</body>
+</html>
