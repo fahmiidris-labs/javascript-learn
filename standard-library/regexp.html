@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+<body>
+<script>
+    {
+        const regexp1 = /[fahmi]/
+        const regexp2 = new RegExp("[fahmi]")
+        const regexp3 = new RegExp(/[fahmi]/)
+    }
+
+    {
+        const name = "Fahmi idris a Fahmi"
+        const regex = /fahmi/
+
+        const result = regex.exec(name)
+        console.info(result)
+        console.info(regex.exec("tidak ada"))
+
+        const test = regex.test(name)
+        console.info(test)
+        console.info(regex.test("tidak ada"))
+    }
+
+    {
+        const name = "fahmi idris\nFahmi idris\nFahmo Idris"
+        const regex1 = /^f.i/igm
+        const regex2 = /Idris/ig
+
+        let result
+        while ((result = regex1.exec(name)) !== null) {
+            console.info(result)
+        }
+
+        while ((result = regex2.exec(name)) !== null) {
+            console.info(result)
+        }
+    }
+
+    {
+        const regex = /fahm[ioaeu]/ig
+
+        const name = "fahmi fahmo fahma fahmu fahme fohmo fahmi fahmo"
+        let result
+        while ((result = regex.exec(name)) !== null) {
+            console.info(result)
+        }
+    }
+
+    {
+        const name = "fohmo fahmi fahmo fahma fahmu fahme fohmo fahmi fahmo"
+
+        console.info(name.match(/fahm[aiueo]/ig))
+        console.info(name.search(/fahm[aiueo]/ig))
+        console.info(name.replace(/fahm[aiueo]/i, "kamu"))
+        console.info(name.replaceAll(/fahm[aiueo]/ig, "kamu"))
+        console.info(name.split(/f/ig))
+    }
+</script>
+</body>
+</html>

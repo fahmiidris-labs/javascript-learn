@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+<script>
+    {
+        const array = ["Fahmi", "Idris", "A"]
+
+        array.forEach(function (value, index) {
+            console.info(`${index} : ${value}`)
+        })
+
+        array.forEach((value, index) => console.info(`${index} : ${value}`))
+
+        array.forEach(value => console.info(value))
+    }
+
+    {
+        const queue = []
+
+        queue.push("Fahmi")
+        queue.push("Idris")
+        queue.push("A")
+
+        console.info(queue.shift())
+        console.info(queue.shift())
+        console.info(queue.shift())
+        console.info(queue.shift())
+    }
+
+    {
+        const stack = []
+
+        stack.push("Fahmi")
+        stack.push("Idris")
+        stack.push("A")
+
+        console.info(stack.pop())
+        console.info(stack.pop())
+        console.info(stack.pop())
+        console.info(stack.pop())
+    }
+
+    {
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+        console.info(source.find(value => value > 3))
+        console.info(source.findIndex(value => value > 3))
+        console.info(source.includes(7))
+        console.info(source.indexOf(5))
+        console.info(source.lastIndexOf(5))
+    }
+
+    {
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const ganjil = numbers.filter(value => value % 2 === 1)
+        const genap = numbers.filter(value => value % 2 === 0)
+
+        console.info(numbers)
+        console.info(ganjil)
+        console.info(genap)
+    }
+
+    {
+        const names = ["Fahmi", "Idris", "A"]
+        const namesUpper = names.map(value => value.toUpperCase())
+        console.info(namesUpper)
+
+        const namesReduce = names.reduce((before, value) => before + " " + value)
+        console.info(namesReduce)
+
+        const namesRight = names.reduceRight((before, value) => before + " " + value)
+        console.info(namesRight)
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const total = numbers.reduce((before, value) => before + value)
+        console.info(total)
+    }
+</script>
+</body>
+</html>
